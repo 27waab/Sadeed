@@ -1,0 +1,131 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/* Main Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+:root {
+    --main-color: #0075ff;
+    --white-color: #fff;
+    --black-color: #333;
+    --gray-color: #999;
+    --rad-btn: 9999999px;
+    --main-transition: 450ms;
+}
+body {
+    background-color: var(--white-color);
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/* Start Background Style */
+.background-columns {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+/* Start Background Style */
+.background-columns::after,
+.background-columns::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--main-color);
+    top: 50%;
+    border-radius: 50px; 
+}
+.background-columns::after {
+    left: -150px;
+    transform: translateY(-50%) rotate(20deg);
+}
+.background-columns::before {
+    right: -150px;
+    transform: translateY(-50%) rotate(-20deg);
+}
+.background-liner {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-image: linear-gradient(#ffffff00, #ffffff66, #ffffffcc, #fff);
+    transform: translate(-50%, -50%);
+}
+/* End Background Style */
+/* Start Content */
+.container-box {
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.container-box img {
+    width: 200px;
+    margin: 0 50px 10px;
+}
+.container-box h1 {
+    text-align: center;
+    font-size: 60px;
+    color: var(--black-color);
+}
+.container-box p {
+    font-size: 20px;
+    color: var(--gray-color);
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 2;
+}
+.container-box p span {
+    color: var(--main-color);
+}
+.container-box button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: var(--main-color);
+    border-radius: var(--rad-btn);
+    color: var(--white-color);
+    font-size: 18px;
+    cursor: pointer;
+}
+/* End Content */
+/* Start Setting Box */
+.setting-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--white-color);
+    width: 100px;
+    text-align: center;
+    color: var(--black-color);
+    border-radius: 6px;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+.setting-icon i {
+    margin-left: 5px;
+}
+/* End Setting Box */
+/* Media */
+@media (max-width: 767px) {
+    .background-columns::after {
+        left: -230px;
+        transform: translateY(-50%) rotate(15deg);
+    }
+    .background-columns::before {
+        right: -230px;
+        transform: translateY(-50%) rotate(-15deg);
+    }
+}
