@@ -38,6 +38,24 @@ a {
     background-image: linear-gradient(#ffffff00, #fffffff3, #fff);
 }
 /* End Background Liner */
+/* Start Ovarlay */
+.ovarlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.9);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: var(--main-transition);
+}
+.ovarlay.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+/* End Ovarlay */
 /* Start Content */
 .container-box {
     position: absolute;
@@ -66,12 +84,96 @@ a {
     background-color: var(--black-color);
     border: none;
     border-radius: var(--rad-btn);
-}
-.container-box button a {
     color: var(--white-color);
     font-size: 18px;
+    cursor: pointer;
 }
 /* End Content */
+/* Start Card */
+.login-card {
+    position: fixed;
+    z-index: 2;
+    width: 500px;
+    height: fit-content;
+    padding: 20px;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -500px;
+    transition: var(--main-transition);
+    transition-delay: 100ms;
+}
+.login-card.show {
+    bottom: 20px;
+}
+.login-card .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    margin-bottom: 20px;
+}
+.login-card .head h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--black-color);
+}
+.login-card .head div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #f6f6f8;
+    border-radius: 50%;
+    border: 2px solid var(--white-color);
+    outline: 1px solid #f6f6f8;
+    margin-bottom: 5px;
+}
+.login-card .head div i {
+    color: var(--black-color);
+}
+.login-card .content form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.login-card .content form label {
+    display: block;
+    text-align: right;
+    color: var(--black-color);
+    font-size: 18px;
+    font-weight: bold;
+    width: 13%;
+}
+.login-card .content form input {
+    display: block;
+    text-align: right;
+    width: 87%;
+    border: 1px solid #eee;
+    padding: 5px 10px;
+    border-radius: var(--rad-btn);
+    outline: none;
+    transition: var(--main-transition);
+}
+.login-card .content form input:focus {
+    border-color: var(--black-color);
+}
+.login-card .content button {
+    width: 100%;
+    height: 50px;
+    background-color: var(--black-color);
+    border: none;
+    border-radius: var(--rad-btn);
+    color: var(--white-color);
+    font-size: 18px;
+    cursor: pointer;
+}
+/* End Card */
 /* Media */
 @media (max-width: 767px) {
     .container-box {
@@ -79,6 +181,9 @@ a {
         bottom: 0;
         width: 100%;
         padding: 20px 25px;
+    }
+    .login-card {
+        width: 350px;
     }
 }
 /* Animation */
