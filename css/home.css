@@ -180,11 +180,4 @@ header .setting i {
 /* End Cards */
 /* Media */
 @media (max-width: 767px) {
-    .cards {
-        flex-direction: column;
-    }
-    .cards .card {
-        width: 350px;
-        margin-bottom: 10px;
-    }
 }
