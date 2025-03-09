@@ -92,7 +92,7 @@ header .setting:hover i {
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .welcome .avatar {
     width: 50px;
@@ -119,8 +119,8 @@ header .setting:hover i {
     font-size: 16px;
     color: var(--gray-color);
     text-align: right;
-    padding-right: 50px;
     line-height: 1.7;
+    padding: 0 20px;
 }
 /* End Welcome */
 /* Start Priority */
