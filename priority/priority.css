@@ -124,11 +124,14 @@ header .setting:hover i {
 }
 /* End Welcome */
 /* Start Priority */
+.priority {
+    padding: 0 20px 20px;
+}
 .priority .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 70px - 200px);
+    height: calc(100vh - 70px - 250px);
     border: 2px dashed #ddd;
     border-radius: 20px;
 }
