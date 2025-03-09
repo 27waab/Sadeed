@@ -104,54 +104,57 @@ header .setting:hover i {
 }
 .cards .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
 }
 .cards .card {
-    min-height: 250px;
-    position: relative;
-    overflow: hidden;
+    background-color: var(--white-color);
+    padding: 20px;
     border-radius: 20px;
-    cursor: pointer;
 }
-.cards .card:first-child {
-    background-color: #2196f3;
+.cards .card .image {
+    min-height: 200px;
+    width: 100%;
+    background-color: var(--white-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    margin-bottom: 15px;
 }
-.cards .card:nth-child(2) {
-    background-color: #8bc34a;
+.cards .card:first-child .image {
+    background-color: #3f51b5;
 }
-.cards .card:last-child {
-    background-color: #FF9800;
+.cards .card:nth-child(2) .image {
+    background-color: #4caf50;
 }
-.cards .card img {
-    position: absolute;
-    width: 200px;
-    top: -20px;
-    left: -20px;
-    transition: var(--main-transition);
+.cards .card:last-child .image {
+    background-color: #ff9800;
 }
-.cards .card:hover img {
+.cards .card .image img {
     width: 100px;
-    top: 20px;
-    left: 20px;
 }
 .cards .card .text {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    text-align: right;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
 }
 .cards .card .text h2 {
-    color: var(--white-color);
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    color: var(--black-color);
+    font-size: 22px;
 }
-.cards .card .text p {
-    color: #ddd;
-    font-size: 14px;
-    line-height: 1.7;
+.cards .card .text a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--black-color);
+}
+.cards .card .text a i {
+    color: var(--white-color);
 }
 /* End Cards */
 /* Start Media */
