@@ -120,7 +120,6 @@ header .setting:hover i {
     color: var(--gray-color);
     text-align: right;
     line-height: 1.7;
-    padding: 0 20px;
 }
 /* End Welcome */
 /* Start Priority */
