@@ -124,7 +124,7 @@ header .setting:hover i {
 /* End Welcome */
 /* Start ToDo */
 .todo {
-    padding: 20px;
+    padding: 20px 0;
 }
 .todo form {
     background-color: var(--white-color);
