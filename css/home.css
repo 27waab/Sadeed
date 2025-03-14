@@ -12,10 +12,12 @@
 :root {
     --main-color: #2176ff;
     --white-color: #fff;
-    --black-color: #31393c;
+    /* --black-color: #31393c; */
+    --black-color: #000000;
     --gray-color: #999;
     --white-background: #f6f6f8;
-    --rad-btn: 6px;
+    --rad-btn: 10px;
+    --rad-div: 15px;
     --main-transition: 450ms;
 }
 body {
@@ -110,7 +112,7 @@ header .setting:hover i {
 .cards .card {
     background-color: var(--white-color);
     padding: 20px;
-    border-radius: 20px;
+    border-radius: var(--rad-div);
 }
 .cards .card .image {
     min-height: 200px;
@@ -119,7 +121,7 @@ header .setting:hover i {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 25px;
+    border-radius: var(--rad-btn);
     margin-bottom: 15px;
 }
 .cards .card:first-child .image {
