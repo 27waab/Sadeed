@@ -12,10 +12,12 @@
 :root {
     --main-color: #2176ff;
     --white-color: #fff;
-    --black-color: #31393c;
+    /* --black-color: #31393c; */
+    --black-color: #000000;
     --gray-color: #999;
     --white-background: #f6f6f8;
-    --rad-btn: 6px;
+    --rad-btn: 10px;
+    --rad-div: 15px;
     --main-transition: 450ms;
 }
 body {
@@ -129,7 +131,7 @@ header .setting:hover i {
 .todo form {
     background-color: var(--white-color);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: var(--rad-div);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -139,7 +141,7 @@ header .setting:hover i {
     width: 68%;
     height: 40px;
     border: 1px solid #eee;
-    border-radius: 10px;
+    border-radius: var(--rad-btn);
     padding: 0 10px;
     outline: none;
 }
@@ -148,7 +150,7 @@ header .setting:hover i {
     background-color: var(--black-color);
     border: none;
     height: 40px;
-    border-radius: 10px;
+    border-radius: var(--rad-btn);
     color: var(--white-color);
     font-weight: bold;
     cursor: pointer;
@@ -159,7 +161,7 @@ header .setting:hover i {
 .todo .todo-section {
     width: 100%;
     background-color: var(--white-color);
-    border-radius: 10px;
+    border-radius: var(--rad-div);
     padding: 10px;
 }
 .todo .todo-section .item {
