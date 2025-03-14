@@ -8,6 +8,7 @@
         <title>سديد | مرتب الأولويات</title>
     </head>
     <body>
+        <div class="ovarlay"></div>
         <!-- Start Header -->
         <header>
             <div class="container">
@@ -42,5 +43,46 @@
             </div>
         </div>
         <!-- End Priority -->
+        <!-- Start Add Priority -->
+        <div class="add-section">
+            <div class="header">
+                <div class="logo">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <h3>إضافة مهمة</h3>
+            </div>
+            <form action="">
+                <div class="name">
+                    <label for="name">إسم المهمة</label>
+                    <input type="text" id="name" />
+                </div>
+                <div class="degre">
+                    <div class="r">
+                        <label for="r">الرغبة</label>
+                        <div>
+                            <input type="number" name="r" id="r" maxlength="1" max="5" />
+                            <p>/5</p>
+                        </div>
+                    </div>
+                    <div class="q">
+                        <label for="q">القدرة</label>
+                        <div>
+                            <input type="number" name="q" id="q" maxlength="1" max="5" />
+                            <p>/5</p>
+                        </div>
+                    </div>
+                    <div class="w">
+                        <label for="w">الوقت</label>
+                        <div>
+                            <input type="number" name="w" id="w" maxlength="1" max="5" />
+                            <p>/5</p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <button>أضف المهمة</button>
+        </div>
+        <!-- End Add Priority -->
+        <script src="priority.js"></script>
     </body>
 </html>
