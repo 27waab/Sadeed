@@ -12,9 +12,11 @@
 :root {
     --main-color: #2176ff;
     --white-color: #fff;
-    --black-color: #31393c;
+    /* --black-color: #31393c; */
+    --black-color: #000000;
     --gray-color: #999;
-    --rad-btn: 6px;
+    --rad-btn: 10px;
+    --rad-div: 15px;
     --main-transition: 450ms;
 }
 body {
@@ -97,7 +99,7 @@ a {
     height: fit-content;
     padding: 20px;
     background-color: var(--white-color);
-    border-radius: 10px;
+    border-radius: var(--rad-div);
     left: 50%;
     transform: translateX(-50%);
     bottom: -500px;
@@ -185,7 +187,12 @@ a {
         padding: 20px 25px;
     }
     .login-card {
-        width: 325px;
+        width: 100%;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .login-card.show {
+        bottom: 0;
     }
 }
 /* Animation */
