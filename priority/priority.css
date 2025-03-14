@@ -12,10 +12,12 @@
 :root {
     --main-color: #2176ff;
     --white-color: #fff;
-    --black-color: #31393c;
+    /* --black-color: #31393c; */
+    --black-color: #000000;
     --gray-color: #999;
     --white-background: #f6f6f8;
-    --rad-btn: 6px;
+    --rad-btn: 10px;
+    --rad-div: 15px;
     --main-transition: 450ms;
 }
 body {
@@ -35,6 +37,24 @@ a {
 	margin-right: auto;
 }
 /* End Conteiner */
+/* Start Ovarlay */
+.ovarlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.9);
+    z-index: 11;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: var(--main-transition);
+}
+.ovarlay.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+/* End Ovarlay */
 /* Start Header */
 header {
     position: fixed;
@@ -45,7 +65,7 @@ header {
     width: 100%;
     min-height: 70px;
     border-bottom: 1px solid #eee;
-    z-index: 10000;
+    z-index: 10;
 }
 header .container {
     height: 70px;
@@ -132,7 +152,7 @@ header .setting:hover i {
     justify-content: center;
     height: calc(100vh - 70px - 250px);
     border: 2px dashed #ddd;
-    border-radius: 20px;
+    border-radius: var(--rad-div);
 }
 .priority .add {
     width: 50px;
@@ -147,6 +167,132 @@ header .setting:hover i {
 .priority .add i {
     color: var(--white-color);
 }
+/* Start Add Priority */
+.add-section {
+    position: fixed;
+    z-index: 12;
+    width: 500px;
+    height: fit-content;
+    padding: 20px;
+    background-color: var(--white-color);
+    border-radius: var(--rad-div);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -500px;
+    transition: var(--main-transition);
+    transition-delay: 100ms;
+}
+.add-section.show {
+    bottom: 20px;
+}
+.add-section .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.add-section .header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #f6f6f8;
+    border-radius: 50%;
+    border: 2px solid var(--white-color);
+    outline: 1px solid #f6f6f8;
+    margin-bottom: 10px;
+}
+.add-section .header .logo i {
+    color: var(--black-color);
+}
+.add-section .header h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--black-color);
+}
+.add-section form .name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-bottom: 20px;
+}
+.add-section form .name label {
+    display: block;
+    text-align: right;
+    color: var(--black-color);
+    font-size: 18px;
+    font-weight: bold;
+    width: 20%;
+}
+.add-section form .name input {
+    display: block;
+    text-align: right;
+    width: 80%;
+    height: 50px;
+    border: 1px solid #eee;
+    padding: 5px 10px;
+    border-radius: var(--rad-btn);
+    outline: none;
+    transition: var(--main-transition);
+}
+.add-section form .name input:focus {
+    border-color: var(--black-color);
+}
+.add-section .degre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+.add-section .degre div {
+    width: 100px;
+    margin-bottom: 20px;
+}
+.add-section .degre div label {
+    color: var(--black-color);
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+}
+.add-section .degre div div {
+    display: flex;
+    align-items: center;
+}
+.add-section .degre div div input {
+    width: 70px;
+    height: 35px;
+    border: 1px solid #eee;
+    border-radius: var(--rad-btn);
+    margin-right: 10px;
+    outline: none;
+    transition: var(--main-transition);
+    padding: 0 5px;
+}
+.add-section .degre div div input:focus {
+    border-color: var(--black-color);
+}
+.add-section .degre div div p {
+    color: var(--black-color);
+    font-size: 16px;
+    font-weight: bold;
+}
+.add-section button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: var(--rad-btn);
+    background-color: var(--black-color);
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* End Add Priority */
 /* End Priority */
 /* Start Media */
 @media (min-width: 768px) {
@@ -163,5 +309,15 @@ header .setting:hover i {
 	.container {
 		width: 1170px;
 	}
+}
+@media (max-width: 767px) {
+    .add-section {
+        width: 100%;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .add-section.show {
+        bottom: 0;
+    }
 }
 /* End Media */
