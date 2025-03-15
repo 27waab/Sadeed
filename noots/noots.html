@@ -8,6 +8,7 @@
         <title>سديد | مستودع الملاحظات</title>
     </head>
     <body>
+        <div class="ovarlay"></div>
         <!-- Start Header -->
         <header>
             <div class="container">
@@ -59,6 +60,26 @@
             ملاحظة جديدة
             <i class="fa-solid fa-plus"></i>
         </div>
+        <div class="add-new-note">
+            <div class="header">
+                <div class="logo">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <h3>ملاحظة جديدة</h3>
+            </div>
+            <form action="">
+                <div class="name">
+                    <label for="name">عنوان الملاحظة</label>
+                    <input type="text" name="name" id="name" />
+                </div>
+                <div class="note">
+                    <label for="note">مضمون الملاحظة</label>
+                    <textarea name="note" id="note"></textarea>
+                </div>
+            </form>
+            <button>أضف الملاحظة</button>
+        </div>
         <!-- End Add Noots -->
+        <script src="noots.js"></script>
     </body>
 </html>
