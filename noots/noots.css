@@ -36,6 +36,24 @@ a {
 	margin-right: auto;
 }
 /* End Conteiner */
+/* Start Ovarlay */
+.ovarlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.9);
+    z-index: 11;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: var(--main-transition);
+}
+.ovarlay.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+/* End Ovarlay */
 /* Start Header */
 header {
     position: fixed;
@@ -46,7 +64,7 @@ header {
     width: 100%;
     min-height: 70px;
     border-bottom: 1px solid #eee;
-    z-index: 10000;
+    z-index: 10;
 }
 header .container {
     height: 70px;
@@ -177,7 +195,7 @@ header .setting:hover i {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    z-index: 20;
+    z-index: 0;
 }
 /* End Noots */
 /* Start Add Noots */
@@ -186,7 +204,7 @@ header .setting:hover i {
     right: 25px;
     bottom: 25px;
     background-color: var(--black-color);
-    z-index: 100;
+    z-index: 1;
     padding: 10px;
     border-radius: var(--rad-btn);
     color: var(--white-color);
@@ -198,6 +216,99 @@ header .setting:hover i {
     font-size: 14px;
 }
 /* End Add Noots */
+/* Start Add New Note */
+.add-new-note {
+    position: fixed;
+    z-index: 2;
+    width: 500px;
+    height: fit-content;
+    padding: 20px;
+    background-color: var(--white-color);
+    border-radius: var(--rad-div);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -500px;
+    transition: var(--main-transition);
+    transition-delay: 100ms;
+    z-index: 12;
+}
+.add-new-note.show {
+    bottom: 20px;
+}
+.add-new-note .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.add-new-note .header h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--black-color);
+    margin-top: 10px;
+}
+.add-new-note .header div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #f6f6f8;
+    border-radius: 50%;
+    border: 2px solid var(--white-color);
+    outline: 1px solid #f6f6f8;
+    margin-bottom: 5px;
+}
+.add-new-note .header div i {
+    color: var(--black-color);
+}
+.add-new-note form {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.add-new-note form div {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+.add-new-note form div:not(:last-child) {
+    margin-bottom: 10px;
+}
+.add-new-note form div label {
+    color: var(--black-color);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.add-new-note form div input,
+.add-new-note form div textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: var(--rad-btn);
+    outline: none;
+    text-align: right;
+}
+.add-new-note form div input {
+    height: 40px;
+}
+.add-new-note form div textarea {
+    height: 200px;
+    resize: none;
+}
+.add-new-note button {
+    width: 100%;
+    height: 40px;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--rad-btn);
+    cursor: pointer;
+}
+/* End Add New Note */
 /* Start Media */
 @media (min-width: 768px) {
 	.container {
@@ -213,5 +324,15 @@ header .setting:hover i {
 	.container {
 		width: 1170px;
 	}
+}
+@media (max-width: 767px) {
+    .add-new-note {
+        width: 100%;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .add-new-note.show {
+        bottom: 0;
+    }
 }
 /* End Media */
