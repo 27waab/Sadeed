@@ -15,7 +15,7 @@
     --black-color: #000000;
     --gray-color: #999;
     --white-background: #f6f6f8;
-    --rad-btn: 10px;
+    --rad-btn: 999999px;
     --rad-div: 15px;
     --main-transition: 450ms;
 }
@@ -144,14 +144,6 @@ header .setting:hover i {
 /* Start Priority */
 .priority {
     padding: 0 20px 20px;
-}
-.priority .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 70px - 250px);
-    border: 2px dashed #ddd;
-    border-radius: var(--rad-div);
 }
 .priority .add {
     width: 50px;
@@ -288,6 +280,20 @@ header .setting:hover i {
     cursor: pointer;
 }
 /* End Add Priority */
+/* Start Priority Section */
+.priority .item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: var(--rad-div);
+    background-color: var(--white-color);
+}
+
+/* End Priority Section */
 /* End Priority */
 /* Start Media */
 @media (min-width: 768px) {
