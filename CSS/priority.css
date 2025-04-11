@@ -44,6 +44,22 @@ body {
         width: 1170px;
     }
 }
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.6);
+    z-index: 10000000;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: var(--main-transition);
+}
+.overlay.show {
+    pointer-events: auto;
+    opacity: 1;
+}
 header {
     min-height: 60px;
     background-color: var(--white-color);
@@ -93,7 +109,8 @@ section .info {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70px;
+    flex-direction: column;
+    height: 100px;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -116,8 +133,21 @@ section .info {
 .btnAddSection button:hover {
     background-color: var(--main-color-alt);
 }
+.btnAddSection p {
+    margin-top: 5px;
+    color: #ff2525;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: var(--main-transition);
+    font-size: 16px;
+    font-weight: 300;
+}
+.btnAddSection p:hover {
+    color: #b91b1b;
+}
 section ul {
     list-style: none;
+    padding-bottom: 80px;
 }
 section ul li {
     width: 100%;
@@ -137,15 +167,107 @@ section li div span {
     color: var(--black-color);
     font-weight: bold;
     margin-left: 10px;
-    font-size: 22px;
+    font-size: 16px;
 }
 section li div h5 {
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--main-color);
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--black-color);
 }
 section li p {
     color: var(--gray-color);
     font-size: 16px;
-    font-weight: 500
+    font-weight: 300;
+}
+section li p span {
+    color: var(--main-color);
+}
+.box-add {
+    width: 320px;
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: var(--main-rad-border-div);
+    position: fixed;
+    bottom: -220px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100000000;
+    transition: var(--main-transition);
+}
+.box-add.show {
+    bottom: 20px;
+}
+.box-add h3 {
+    text-align: center;
+    font-size: 18px;
+    color: var(--black-color);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.box-add form .name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.box-add .name label {
+    font-size: 16px;
+    color: var(--black-color);
+    font-size: 16px;
+    width: 20%;
+}
+.box-add .name input {
+    width: 75%;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-bottom: var(--main-border);
+    transition: var(--main-transition);
+}
+.box-add .degre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.box-add .degre div {
+    display: flex;
+    align-items: center;
+    width: 80px;
+}
+.box-add .degre div label,
+.box-add .degre div span {
+    width: 20%;
+    font-size: 14px;
+    color: var(--black-color);
+}
+.box-add .degre div label {
+    width: 40%;
+}
+.box-add .degre div input {
+    width: calc(100% - 60%);
+    padding: 2px 2px;
+    outline: none;
+    border: none;
+    border-bottom: var(--main-border);
+    transition: var(--main-transition);
+    color: var(--gray-color);
+}
+.box-add .name input:focus,
+.box-add .degre div input:focus {
+    border-color: var(--main-color);
+}
+.box-add button {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: var(--main-rad-border-btn);
+    color: var(--white-color);
+    background-color: var(--main-color);
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--main-transition);
+    font-weight: 300;
+}
+.box-add button:hover {
+    background-color: var(--main-color-alt);
 }
