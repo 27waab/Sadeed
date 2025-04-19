@@ -58,3 +58,6 @@ body {
 .landing button:hover {
     background-color: var(--main-color-alt);
 }
+img {
+    width: 300px;
+}
