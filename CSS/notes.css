@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+:root {
+    --main-color: #1565c0;
+    --main-color-alt: #0d47a1;
+    --main-transition: 300ms;
+    --main-border: 1px solid #eee;
+    --main-rad-border-btn: 999999px;
+    --main-rad-border-div: 20px;
+    --white-color: #fff;
+    --black-color: #000;
+    --gray-color: #99a1aa;
+}
+body {
+    background-color: #f6f6f8;
+}
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.6);
+    z-index: 2;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: var(--main-transition);
+}
+.overlay.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+header {
+    min-height: 60px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: var(--main-border);
+    z-index: 1;
+}
+header .logo {
+    font-size: 22px;
+    color: var(--black-color);
+    font-weight: bold;
+}
+section {
+    margin-top: 60px;
+    padding: 20px 0;
+}
+section .info {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.info .icon {
+    margin-bottom: 10px;
+}
+.icon i {
+    font-size: 50px;
+    color: var(--main-color);
+}
+.info h3 {
+    font-size: 30px;
+    color: var(--black-color);
+    font-weight: 500;
+}
+.info p {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--gray-color);
+    margin-top: 20px;
+}
+#addBtnInPage {
+    width: fit-content;
+    height:40;
+    padding: 5px 20px;
+    border: none;
+    border-radius: var(--main-rad-border-btn);
+    color: var(--white-color);
+    background-color: var(--main-color);
+    font-size: 18px;
+    cursor: pointer;
+    transition: var(--main-transition);
+    font-weight: 500;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+#addBtnInPage:hover {
+    background-color: var(--main-color-alt);
+}
+.addForm {
+    background-color: var(--white-color);
+    width: 325px;
+    padding: 20px;
+    position: fixed;
+    bottom: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: var(--main-rad-border-div);
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: var(--main-transition);
+}
+.addForm.show {
+    bottom: 20px;
+}
+.addForm h3 {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.addForm form div.name {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.addForm .name label {
+    font-size: 16px;
+    color: var(--black-color);
+    width: fit-content;
+    font-weight: 300;
+}
+.addForm .name input {
+    width: 78%;
+    padding: 5px 10px;
+    border: none;
+    border-bottom: var(--main-border);
+    outline: none;
+    transition: var(--main-transition);
+}
+.addForm .name input:focus {
+    border-color: var(--main-color);
+}
+.addForm .textarea label {
+    font-size: 16px;
+    color: var(--black-color);
+    width: fit-content;
+    font-weight: 300;
+    display: block;
+    margin-bottom: 5px;
+}
+.addForm .textarea textarea {
+    width: 100%;
+    display: block;
+    resize: none;
+    padding: 10px;
+    outline: none;
+    min-height: 100px;
+    border: var(--main-border);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: var(--main-transition);
+}
+.addForm .textarea textarea:focus {
+    border-color: var(--main-color);
+}
+.addForm button {
+    width: 100%;
+    height: 40px;
+    padding: 5px 20px;
+    border: none;
+    border-radius: var(--main-rad-border-btn);
+    color: var(--white-color);
+    background-color: var(--main-color);
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--main-transition);
+    font-weight: 400;
+}
+.addForm button:hover {
+    background-color: var(--main-color-alt);
+}
+.thenote {
+    width: 100%;
+    height: 350px;
+    background-color: var(--white-color);
+    border-top-right-radius: var(--main-rad-border-div);
+    border-top-left-radius: var(--main-rad-border-div);
+    position: fixed;
+    bottom: -350px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    z-index: 4;
+    transition: var(--main-transition);
+}
+.thenote.show {
+    bottom: 0;
+}
+.thenote h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--black-color);
+    margin-bottom: 10px;
+}
+.thenote p {
+    font-size: 18px;
+    color: var(--black-color);
+    line-height: 2;
+}
+.notes-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    list-style: none;
+    margin-top: 20px;
+}
+.notes-content li {
+    background-color: var(--white-color);
+    min-height: 150px;
+    padding: 10px 20px;
+    border-radius: var(--main-rad-border-div);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    cursor: pointer;
+    transition: var(--main-transition);
+    overflow: hidden;
+}
+.notes-content li span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    transition: var(--main-transition);
+}
+.notes-content li:hover span {
+    box-shadow: 0 0 0 560px var(--main-color);
+}
+.notes-content li p {
+    color: var(--black-color);
+    font-weight: 500;
+    font-size: 22px;
+    transition: var(--main-transition);
+}
+.notes-content li:hover p {
+    color: var(--white-color);
+}
