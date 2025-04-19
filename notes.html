@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="CSS/notes.css" />
+        <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" crossorigin="anonymous" />
+        <title>سديد</title>
+    </head>
+    <body>
+        <div class="overlay"></div>
+        <!-- Start Content -->
+        <header>
+            <div class="logo">سديد</div>
+        </header>
+        <section>
+            <div class="container">
+                <div class="info">
+                    <div class="icon">
+                        <i class="hgi hgi-stroke hgi-folder-edit"></i>
+                    </div>
+                    <h3>مستودع الملاحظات</h3>
+                    <p>دوّن أفكارك ببراعة. يتيح لك هذا التطبيق الأنيق تدوين أفكارك وذكرياتك، وحفظها بأمان للرجوع إليها فورًا.</p>
+                </div>
+                <ul class="notes-content"></ul>
+            </div>
+            <button id="addBtnInPage">أضف</button>
+            <div class="addForm" id="addForm">
+                <h3>ملاحظة جديدة</h3>
+                <form action="">
+                    <div class="name">
+                        <label for="name">العنوان:</label>
+                        <input type="text" name="name" id="name" />
+                    </div>
+                    <div class="textarea">
+                        <label for="txt">النص</label>
+                        <textarea name="txt" id="txt"></textarea>
+                    </div>
+                </form>
+                <button id="sendData">إضافة الملاحظة</button>
+            </div>
+            <div class="thenote" id="thenote">
+                <h3>الأسم</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem distinctio omnis expedita, ipsum fugiat blanditiis excepturi exercitationem delectus, explicabo animi hic sint. Fugiat dolores, veniam obcaecati blanditiis totam doloribus aut?
+                </p>
+            </div>
+        </section>
+        <!-- End Content -->
+        <!-- Script File -->
+        <script src="JS/notes.js"></script>
+    </body>
+</html>
